@@ -1,0 +1,20 @@
+{
+  "name": "會考衝刺 5A++",
+  "short_name": "會考衝刺",
+  "description": "116年國中教育會考倒數與5A++應援工具",
+  "lang": "zh-Hant",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "portrait-primary",
+  "background_color": "#05060b",
+  "theme_color": "#05060b",
+  "icons": [
+    {
+      "src": "./icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}
