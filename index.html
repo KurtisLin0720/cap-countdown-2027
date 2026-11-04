@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#05060b">
+<meta name="description" content="116年國中教育會考倒數、5A++應援語錄與每日衝刺儀表板">
+<link rel="manifest" href="./manifest.json">
+<link rel="icon" href="./icon.svg" type="image/svg+xml">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="會考衝刺">
+<title>CAP 2027｜會考衝刺系統</title>
+<style>
+:root{--bg:#05060b;--panel:#0c101b;--blue:#00d9ff;--purple:#a855f7;--text:#f4f7ff;--muted:#78849c}
+*{box-sizing:border-box}
+body{margin:0;min-height:100vh;background:radial-gradient(ellipse at 50% -10%,#122344 0%,transparent 55%),var(--bg);color:var(--text);font-family:system-ui,"Noto Sans TC",sans-serif;overflow-x:hidden}
+body:before{content:"";position:fixed;inset:0;pointer-events:none;opacity:.12;background-image:linear-gradient(#23304a 1px,transparent 1px),linear-gradient(90deg,#23304a 1px,transparent 1px);background-size:35px 35px;mask-image:linear-gradient(to bottom,black,transparent 90%)}
+.container{width:min(900px,92%);margin:auto;padding:35px 0 45px;position:relative}
+header{display:flex;justify-content:space-between;align-items:center;margin-bottom:65px}
+.logo{font-size:17px;font-weight:900;letter-spacing:2px}.logo span{color:var(--blue)}
+.status{font-size:11px;color:#57ffb0;border:1px solid #236a50;padding:7px 12px;border-radius:20px;letter-spacing:1px}
+h1{text-align:center;font-size:clamp(27px,6vw,46px);margin:0;letter-spacing:3px}
+.subtitle{text-align:center;color:var(--muted);font-size:13px;margin-top:13px;letter-spacing:3px}
+.countdown-card{margin-top:45px;padding:35px 20px;background:linear-gradient(145deg,#111a2b,#090b13);border:1px solid #233c60;border-radius:22px;box-shadow:0 0 45px #007bff12,inset 0 0 35px #007bff08;position:relative;overflow:hidden}
+.countdown-card:before{content:"";position:absolute;height:2px;top:0;left:15%;width:70%;background:linear-gradient(90deg,transparent,var(--blue),transparent)}
+.card-label{text-align:center;font-size:12px;color:var(--blue);letter-spacing:4px}
+.countdown{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-top:35px}
+.time-box{text-align:center;min-width:0}
+.number{font-size:clamp(32px,8vw,65px);font-weight:800;font-variant-numeric:tabular-nums;line-height:1.2;background:linear-gradient(180deg,#fff,#80dfff);-webkit-background-clip:text;background-clip:text;color:transparent;text-shadow:0 0 25px #00c8ff20}
+.unit{font-size:12px;color:var(--muted);margin-top:12px;letter-spacing:3px}
+.exam-date{text-align:center;color:#9caac4;font-size:12px;margin-top:35px}
+.section-title{font-size:13px;color:var(--blue);letter-spacing:3px;margin-bottom:18px}
+.quote-card{margin-top:28px;padding:27px 24px;border:1px solid #39285b;border-radius:18px;background:linear-gradient(135deg,#151027,#0b0c16);min-height:165px;display:flex;flex-direction:column;justify-content:center}
+.quote{font-size:clamp(17px,4vw,23px);line-height:1.8;font-weight:700;text-align:center}
+.quote-mark{color:var(--purple);font-size:35px;text-align:center;line-height:1;margin-bottom:10px}
+.quote-author{text-align:center;color:#a78bfa;font-size:11px;margin-top:15px;letter-spacing:2px}
+.actions{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-top:20px}
+button{border:1px solid #315071;background:#101b2d;color:#d8f5ff;padding:12px 20px;border-radius:10px;font-size:13px;cursor:pointer;transition:.2s}
+button:hover{background:#17304b;border-color:var(--blue)}button:active{transform:scale(.97)}
+.info-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:13px;margin-top:35px}
+.info{background:var(--panel);border:1px solid #202a3d;border-radius:14px;padding:19px}
+.info-label{color:var(--muted);font-size:11px;letter-spacing:2px}
+.info-value{font-size:19px;font-weight:700;margin-top:12px}.info-value.blue{color:var(--blue)}
+footer{text-align:center;margin-top:55px;font-size:10px;color:#58647b;letter-spacing:2px;line-height:2}
+.notice{text-align:center;color:#8794aa;font-size:11px;line-height:1.7;margin:14px auto 0;max-width:650px}
+@media(max-width:480px){.container{padding-top:24px}header{margin-bottom:48px}.countdown-card{padding:30px 10px}.countdown{gap:3px}.number{font-size:clamp(28px,9vw,42px)}.unit{font-size:10px;letter-spacing:1px}.info{padding:15px}.info-value{font-size:16px}}
+@media(prefers-reduced-motion:no-preference){.countdown-card{animation:appear .8s ease both}@keyframes appear{from{opacity:0;transform:translateY(15px)}to{opacity:1;transform:translateY(0)}}}
+</style>
+</head>
+<body>
+<div class="container">
+<header><div class="logo">CAP<span>_</span>2027</div><div class="status">● SYSTEM ONLINE</div></header>
+<main>
+<h1>會考衝刺系統</h1><div class="subtitle">YOUR FUTURE STARTS NOW</div>
+<section class="countdown-card">
+<div class="card-label">COUNTDOWN TO SUCCESS</div>
+<div class="countdown">
+<div class="time-box"><div class="number" id="days">---</div><div class="unit">天 DAYS</div></div>
+<div class="time-box"><div class="number" id="hours">--</div><div class="unit">時 HOURS</div></div>
+<div class="time-box"><div class="number" id="minutes">--</div><div class="unit">分 MIN</div></div>
+<div class="time-box"><div class="number" id="seconds">--</div><div class="unit">秒 SEC</div></div>
+</div>
+<div class="exam-date">預估目標｜2027.05.15 08:30（台灣時間）</div>
+<div class="notice">考試日期與首節時間目前以預估值計算；正式簡章公布後可再調整。</div>
+</section>
+<section class="quote-card"><div class="section-title">✦ DAILY MOTIVATION</div><div class="quote-mark">“</div><div class="quote" id="quote">你的努力，終將成為自己的底氣。</div><div class="quote-author">PROJECT 5A++</div></section>
+<div class="actions"><button id="quoteButton">↻ 換一句應援</button><button id="fullscreenButton">⛶ 全螢幕模式</button></div>
+<section class="info-grid">
+<div class="info"><div class="info-label">EXAM YEAR</div><div class="info-value blue">116 學年度</div></div>
+<div class="info"><div class="info-label">EXAM DATE</div><div class="info-value">05.15 — 05.16</div></div>
+<div class="info"><div class="info-label">YOUR GOAL</div><div class="info-value blue">5A++</div></div>
+<div class="info"><div class="info-label">MISSION</div><div class="info-value">突破極限</div></div>
+</section>
+</main>
+<footer>CAP 2027 · EXAM COUNTDOWN SYSTEM<br>DESIGNED FOR YOUR FUTURE<br>每一秒的努力，都有意義。</footer>
+</div>
+<script>
+const target=new Date("2027-05-15T08:30:00+08:00").getTime();
+const el=id=>document.getElementById(id);
+function updateCountdown(){
+ let diff=target-Date.now();
+ if(diff<=0){["days","hours","minutes","seconds"].forEach((id)=>el(id).textContent="00");return}
+ const days=Math.floor(diff/86400000);diff%=86400000;
+ const hours=Math.floor(diff/3600000);diff%=3600000;
+ const minutes=Math.floor(diff/60000);const seconds=Math.floor((diff%60000)/1000);
+ el("days").textContent=String(days).padStart(3,"0");
+ el("hours").textContent=String(hours).padStart(2,"0");
+ el("minutes").textContent=String(minutes).padStart(2,"0");
+ el("seconds").textContent=String(seconds).padStart(2,"0");
+}
+updateCountdown();setInterval(updateCountdown,1000);
+const quotes=[
+"你不需要一次就成為最強，只需要每天比昨天更進步。",
+"今天多理解一道題，明天就多一分底氣。",
+"5A++不是奇蹟，而是無數個認真今天的累積。",
+"別讓昨天的失誤，決定明天的成績。",
+"真正的高手，不是從不犯錯，而是懂得從錯誤中成長。",
+"你現在讀過的每一頁，都在替未來鋪路。",
+"別急著羨慕別人的成績，先專注自己的進步。",
+"相信自己的累積，考場上你會感謝現在的自己。",
+"把不會的題目變成會的，就是最實在的進步。",
+"目標可以很遠，但今天的下一步就在眼前。",
+"你可以疲憊，但別忘記自己為什麼出發。",
+"5A++不是終點，而是你努力過的證明。",
+"不必每天完美，但要持續向前。",
+"今天的自律，是明天選擇的自由。",
+"把焦慮化成行動，把目標化成日常。"
+];
+let lastQuote=-1;
+function newQuote(){let i;do{i=Math.floor(Math.random()*quotes.length)}while(i===lastQuote&&quotes.length>1);lastQuote=i;el("quote").textContent=quotes[i]}
+el("quoteButton").addEventListener("click",newQuote);
+el("fullscreenButton").addEventListener("click",async()=>{
+ try{if(!document.fullscreenElement){if(document.documentElement.requestFullscreen)await document.documentElement.requestFullscreen();else alert("請使用瀏覽器選單新增至主畫面，以取得類 APP 體驗。")}else if(document.exitFullscreen)await document.exitFullscreen()}
+ catch(e){alert("瀏覽器未允許全螢幕，請改用瀏覽器選單操作。")}
+});
+document.addEventListener("visibilitychange",()=>{if(!document.hidden)updateCountdown()});
+if("serviceWorker" in navigator){window.addEventListener("load",()=>navigator.serviceWorker.register("./sw.js").catch(err=>console.log("SW registration failed:",err)))}
+</script>
+</body>
+</html>
